@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many IT projects have been implemented by SoftServe</h3>
+                <h5 id = "text"></h5>
+                <button id="false1">Less then 10000</button>
+                <button id="false2">10000</button>
+                <button id="false3">15000</button>
+                <button id="false4">20000</button>
+                <button id="true">More then 20000</button>
+
+                <script>
+                    // TODO: Add code to check answers to questions
+
+                    var buttons = document.querySelectorAll('div.section button');
+                    buttons.forEach(function(button) {
+                    button.addEventListener('click', function () {
+                    var id = button.id;
+                    //alert(id);
+                    if (id == 'true') {
+                        text.textContent = 'Correct!';
+                        button.style.backgroundColor = "#00ff00";
+                    } else {
+                        text.textContent = 'Incorrect';
+                        button.style.backgroundColor = "#ff0000";
+                    }
+                    })});
+
+                </script>
+             </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which European country will SoftServe open an office in 2022?</h3>
+                <h5 id = "freeText"></h5>
+                <form>
+                    <input id="textField" type="text" />
+                    <input id="buttonCheck" type="button" value="Check Answer" />
+
+                    <script>
+                        // TODO: Add code to check answers to questions
+                        var answer = document.getElementById("textField");
+                        var correctAnswer = "Romania";
+                        buttonCheck.onclick = function () {
+                        if (answer.value == correctAnswer) {
+                        freeText.textContent = 'Correct!';
+                        answer.style.backgroundColor = "#00ff00";
+                        } else {
+                        freeText.textContent = 'Incorrect';
+                        answer.style.backgroundColor = "#ff0000";
+                        }
+                         };
+                    </script>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
